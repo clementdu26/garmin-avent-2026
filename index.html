@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendrier de l’Avent Garmin 2026</title>
+<style>
+:root{--pine:#153d30;--pine2:#1e5942;--gold:#e8c778;--cream:#fff2d4;--red:#9e292b;--wood:#57351f}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#fff8e8;font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+background:radial-gradient(ellipse at top,#285f48 0,#123528 52%,#081d18 100%);padding:24px 14px 40px}
+main{max-width:900px;margin:auto}
+header{text-align:center;margin:6px auto 24px}
+.kicker{letter-spacing:.2em;font-size:.75rem;color:var(--gold);font-weight:800}
+h1{font-family:Georgia,serif;font-size:clamp(2rem,7vw,3.6rem);line-height:1.05;margin:10px 0;color:#ffe6a5;text-shadow:0 3px 14px #0008}
+.sub{color:#e7e0cc;margin:0}
+.info{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:16px 0}
+.pill{border:1px solid #d9b96d88;border-radius:99px;padding:7px 12px;font-size:.82rem;background:#ffffff0c}
+.calendar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:16px;border:1px solid #d8b76a88;border-radius:22px;background:linear-gradient(145deg,#714629,#3e281c 65%,#281b15);box-shadow:0 18px 45px #0006,inset 0 1px #fff4}
+.cell{position:relative;min-height:112px;perspective:900px;isolation:isolate}
+.cubby{position:absolute;inset:0;border:2px solid #b98b4b;border-radius:9px;background:linear-gradient(145deg,#f3d99c,#a56b37 16%,#4b2e1d 20%,#251a13 100%);box-shadow:inset 0 0 0 3px #2b1a12,0 4px 8px #0006;overflow:visible}
+.inside{position:absolute;inset:5px;border-radius:5px;background:radial-gradient(circle at 50% 30%,#fff4c7,#e6bd67 60%,#9b622e);color:#4b2b16;display:flex;align-items:center;justify-content:center;text-align:center;padding:7px;opacity:.16;transition:opacity .35s;z-index:1}
+.inside strong{font-family:Georgia,serif;font-size:clamp(.65rem,2.4vw,.9rem);line-height:1.2}
+.door{position:absolute;inset:0;transform-origin:left center;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.75,.2,1);z-index:3;cursor:pointer;outline:none}
+.door.open{transform:rotateY(-112deg)}
+.door:focus-visible{outline:3px solid #fff;outline-offset:4px;border-radius:9px}
+.front{position:absolute;inset:0;backface-visibility:hidden;border:2px solid #e3bd70;border-radius:8px;background:linear-gradient(145deg,#c64b40,#8e2027 60%,#64191e);box-shadow:inset 0 0 0 4px #e6bd6b,inset 0 0 0 7px #70201f,0 3px 8px #0007;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#ffe8ae}
+.front:before{content:"";position:absolute;inset:8px;border:1px solid #f4d68b88;border-radius:4px}
+.num{font-family:Georgia,serif;font-size:2.3rem;font-weight:bold;text-shadow:0 2px 3px #48100c}
+.day{font-size:.65rem;letter-spacing:.08em;font-weight:800;margin-top:3px}
+.knob{position:absolute;right:9px;top:50%;width:9px;height:9px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff2b9,#c18a37 60%,#704318);box-shadow:0 1px 3px #351b0a;z-index:2}
+.cell.done .front{background:linear-gradient(145deg,#427a54,#1c4d36)}
+.cell.done .inside{opacity:1}
+.cell.today .front{box-shadow:inset 0 0 0 4px #ffe09a,inset 0 0 0 7px #70201f,0 0 15px #ffdb72aa}
+.cell.locked{filter:saturate(.72)}
+.cell.locked .door{cursor:not-allowed}
+.cell.locked .front:after{content:"🔒";position:absolute;bottom:7px;right:9px;font-size:.7rem}
+.cell.opened .inside{opacity:1}
+.hint{text-align:center;color:#e8d9b8;font-size:.9rem;margin:17px 4px 0;min-height:1.4em}
+.panel{display:none;margin:18px auto 0;padding:18px;border:1px solid #e7c777;border-radius:16px;background:linear-gradient(145deg,#fff0c8,#e6bd69);color:#442817;text-align:center;box-shadow:0 10px 28px #0005}
+.panel.show{display:block;animation:appear .45s ease both}
+.panel .eyebrow{font-size:.72rem;font-weight:900;letter-spacing:.16em;color:#805020}
+.panel h2{font-family:Georgia,serif;font-size:clamp(1.2rem,4vw,1.8rem);margin:7px 0}
+.panel p{margin:5px 0 0}
+@keyframes appear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.legend{text-align:center;color:#d8d0bb;font-size:.78rem;margin-top:15px}
+@media(max-width:520px){.calendar{gap:8px;padding:10px}.cell{min-height:92px}.num{font-size:1.9rem}.day{font-size:.58rem}}
+@media(min-width:700px){.calendar{grid-template-columns:repeat(6,minmax(0,1fr))}.cell{min-height:125px}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="kicker">🎄 ÉDITION SPÉCIALE NOËL 2026 🎄</div>
+<h1>Calendrier de l’Avent Garmin</h1>
+<p class="sub">Forerunner 165 · du 18 novembre au 24 décembre</p>
+<div class="info"><span class="pill">37 petites portes</span><span class="pill">Une activité par jour</span><span class="pill">🎅 Surprise finale le 24 décembre</span></div>
+</header>
+<section class="calendar" id="calendar" aria-label="Les 37 portes du calendrier"></section>
+<p class="hint" id="hint">Appuie sur la porte n°1 pour la faire pivoter et découvrir son titre.</p>
+<section class="panel" id="panel" aria-live="polite">
+<div class="eyebrow">CASE N°1 · 18 NOVEMBRE</div>
+<h2>Découvrir les fonctions de la Garmin Forerunner 165</h2>
+<p>Ta première activité t’attend. Reviens dans la conversation pour la réaliser avec Syntrax !</p>
+</section>
+<p class="legend">Les cases suivantes restent verrouillées. Elles ne dévoilent rien avant leur jour.</p>
+</main>
+<script>
+const dates = ['18 NOV.', '19 NOV.', '20 NOV.', '21 NOV.', '22 NOV.', '23 NOV.', '24 NOV.', '25 NOV.', '26 NOV.', '27 NOV.', '28 NOV.', '29 NOV.', '30 NOV.', '1 DÉC.', '2 DÉC.', '3 DÉC.', '4 DÉC.', '5 DÉC.', '6 DÉC.', '7 DÉC.', '8 DÉC.', '9 DÉC.', '10 DÉC.', '11 DÉC.', '12 DÉC.', '13 DÉC.', '14 DÉC.', '15 DÉC.', '16 DÉC.', '17 DÉC.', '18 DÉC.', '19 DÉC.', '20 DÉC.', '21 DÉC.', '22 DÉC.', '23 DÉC.', '24 DÉC.'];
+const calendar = document.getElementById('calendar');
+const panel = document.getElementById('panel');
+const hint = document.getElementById('hint');
+let isOpen = false;
+dates.forEach((label,index)=>{
+  const n=index+1, cell=document.createElement('div');
+  cell.className='cell '+(n===1?'today':'locked');
+  const inside=document.createElement('div'); inside.className='inside';
+  if(n===1){inside.innerHTML='<strong>Découvrir les fonctions de la Garmin Forerunner 165</strong>';}
+  else {inside.innerHTML='<strong>Case verrouillée</strong>';}
+  const door=document.createElement('button');
+  door.className='door'; door.type='button'; door.setAttribute('aria-label',`Ouvrir la case ${n} ${label}`);
+  door.innerHTML=`<span class="front"><span class="num">${n}</span><span class="day">${label}</span><span class="knob"></span></span>`;
+  if(n!==1){door.disabled=true;door.tabIndex=-1;}
+  else{
+    door.addEventListener('click',()=>{
+      isOpen=!isOpen;
+      door.classList.toggle('open',isOpen);
+      cell.classList.toggle('opened',isOpen);
+      panel.classList.toggle('show',isOpen);
+      hint.textContent=isOpen?'✨ La porte n°1 est ouverte ! Appuie de nouveau pour la refermer.':'Appuie sur la porte n°1 pour la faire pivoter et découvrir son titre.';
+      door.setAttribute('aria-label',isOpen?'Refermer la case 1':'Ouvrir la case 1');
+    });
+  }
+  cell.append(inside,door); calendar.appendChild(cell);
+});
+</script>
+</body>
+</html>
